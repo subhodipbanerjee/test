@@ -1,0 +1,4 @@
+<h1>Profile</h1>
+<% if current_user.customer? %>
+  Hi <%= @customer.email %>
+<% end %>
