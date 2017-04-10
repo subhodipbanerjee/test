@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   def check_no_of_customer_signed_in
     customer_registered_today = User.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).count
-    if customer_registered_today > 10
+    if customer_registered_today > 20
       errors.add(:base, "Maximum registration limit reach")
       return false
     end
